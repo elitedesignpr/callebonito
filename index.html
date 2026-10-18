@@ -5,6 +5,128 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Calle Bonito #5 — Plan Maestro Semana 23</title>
 <style>
+  :root {
+    --bg:#ffffff; --card:#ffffff; --ink:#1d1d1f; --muted:#86868b; --soft:#f5f5f7;
+    --hair:#e8e8ed; --blue:#0071e3;
+  }
+  * { box-sizing:border-box }
+  html { -webkit-text-size-adjust:100% }
+  body {
+    margin:0; padding:48px 40px 64px; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display','Helvetica Neue','Segoe UI',Arial,sans-serif;
+    font-size:14px; line-height:1.4; -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:1480px; margin:0 auto }
+  h1 { font-size:34px; font-weight:700; letter-spacing:-.022em; margin:0 0 6px; color:var(--ink) }
+  p.sub { font-size:17px; color:var(--muted); margin:0 0 32px; font-weight:400 }
+  .card { border:1px solid var(--hair); border-radius:18px; overflow:hidden; background:var(--card); }
+  .scroll { overflow-x:auto }
+  table { width:100%; border-collapse:collapse; min-width:1100px }
+  th {
+    position:sticky; top:0; background:rgba(255,255,255,.88);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); backdrop-filter:saturate(180%) blur(20px);
+    color:var(--muted); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.06em;
+    padding:14px 12px; text-align:left; border-bottom:1px solid var(--hair); white-space:nowrap;
+  }
+  td { padding:12px 12px; border-bottom:1px solid var(--hair); vertical-align:middle }
+  tbody tr:last-child td { border-bottom:none }
+  tbody tr { transition:background .15s ease }
+  tbody tr:hover td { background:var(--soft) }
+  td.id { font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12px; color:var(--muted); white-space:nowrap }
+  td.task { font-weight:500; min-width:190px }
+  td.resp { color:var(--ink) }
+  td.date { white-space:nowrap; color:var(--muted); font-size:13px; font-variant-numeric:tabular-nums }
+  td.num { text-align:center; color:var(--muted); font-variant-numeric:tabular-nums }
+  td.risk { color:#b25e00; font-size:13px; min-width:130px }
+  td.note { color:var(--muted); font-size:13px; min-width:150px }
+  .wbs {
+    display:inline-block; white-space:nowrap; background:#eef5fe; color:var(--blue);
+    font-size:12px; font-weight:500; padding:3px 9px; border-radius:980px;
+  }
+  .prog { display:flex; align-items:center; gap:10px }
+  .bar { width:52px; height:6px; border-radius:980px; background:#ececf0; overflow:hidden }
+  .bar i { display:block; height:100%; border-radius:980px; background:var(--blue) }
+  .prog span { font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; min-width:32px }
+  .pill {
+    display:inline-block; white-space:nowrap; font-size:12px; font-weight:600;
+    padding:4px 10px; border-radius:980px;
+  }
+  .pill.late { background:#ffe8e6; color:#c4271b }
+  .pill.done { background:#e1f6e8; color:#1f7a3f }
+  .pill.prog { background:#fff1d6; color:#9a5b00 }
+  .pill.plan { background:#f2f2f7; color:#6e6e73 }
+  @media (max-width:700px) {
+    body { padding:28px 16px 40px }
+    h1 { font-size:26px } p.sub { font-size:15px; margin-bottom:22px }
+    .card { border-radius:14px }
+  }
+  @media print {
+    body { padding:0 } .card { border:none } th { position:static }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Calle Bonito #5 — Plan Maestro</h1>
+<p class="sub">Semana 23 &middot; 2026</p>
+<div class="card"><div class="scroll">
+<table>
+<thead><tr><th>ID</th><th>WBS</th><th>Tarea</th><th>Responsable</th><th>Inicio</th><th>Fin</th><th>Días</th><th>Avance</th><th>Status</th><th>Riesgo</th><th>Notas</th></tr></thead>
+<tbody>
+<tr><td class="id">T-001</td><td><span class="wbs">Pedestal Eléctrico</span></td><td class="task">Construcción Pedestal Eléctrico</td><td class="resp">Ivan</td><td class="date">22/05/2026</td><td class="date">15/06/2026</td><td class="num">17</td><td><div class="prog"><div class="bar"><i style="width:75%"></i></div><span>75%</span></div></td><td><span class="pill late">Atrasada</span></td><td class="risk">Demora inspección LUMA</td><td class="note">En espera de Base del contador</td></tr>
+<tr><td class="id">T-003</td><td><span class="wbs">Pedestal Eléctrico</span></td><td class="task">Electricidad 4to piso</td><td class="resp">Ivan</td><td class="date">03/06/2026</td><td class="date">08/06/2026</td><td class="num">4</td><td><div class="prog"><div class="bar"><i style="width:50%"></i></div><span>50%</span></div></td><td><span class="pill late">Atrasada</span></td><td class="risk">Restrasa topping y empanetado</td><td class="note"></td></tr>
+<tr><td class="id">T-004</td><td><span class="wbs">Pedestal Eléctrico</span></td><td class="task">Conexión final de LUMA</td><td class="resp">LUMA</td><td class="date">15/06/2026</td><td class="date">30/06/2026</td><td class="num">12</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-006</td><td><span class="wbs">Piso #1</span></td><td class="task">Reparación Huellas entrada Garage</td><td class="resp">Expert</td><td class="date">10/08/2026</td><td class="date">15/08/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-007</td><td><span class="wbs">Piso #1</span></td><td class="task">Instalación cristal Gym</td><td class="resp">Elias</td><td class="date">18/06/2026</td><td class="date">22/06/2026</td><td class="num">3</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-008</td><td><span class="wbs">Piso #1</span></td><td class="task">Terminación cuarto mecánico Piscina</td><td class="resp">Expert</td><td class="date">08/06/2026</td><td class="date">12/06/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:75%"></i></div><span>75%</span></div></td><td><span class="pill prog">En proceso</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-009</td><td><span class="wbs">Piso #1</span></td><td class="task">Compra equipos de la piscina</td><td class="resp">Comprados</td><td class="date">30/06/2026</td><td class="date">30/06/2026</td><td class="num">1</td><td><div class="prog"><div class="bar"><i style="width:1%"></i></div><span>1%</span></div></td><td><span class="pill done">Finalizada</span></td><td class="risk"></td><td class="note">Confirmar entrega</td></tr>
+<tr><td class="id">T-010</td><td><span class="wbs">Piso #1</span></td><td class="task">Instalación equipos de la piscina</td><td class="resp">Felix</td><td class="date">08/06/2026</td><td class="date">12/06/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note">Confirmar esto</td></tr>
+<tr><td class="id">T-011</td><td><span class="wbs">Piso #1</span></td><td class="task">Limpieza del foso del elevador</td><td class="resp">Eury</td><td class="date">15/06/2026</td><td class="date">16/06/2026</td><td class="num">2</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note">Pago nomina diaria extra Eury</td></tr>
+<tr><td class="id">T-014</td><td><span class="wbs">Todos</span></td><td class="task">Pintura General</td><td class="resp">Albert</td><td class="date">01/07/2026</td><td class="date">10/07/2026</td><td class="num">8</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-015</td><td><span class="wbs">Todos</span></td><td class="task">Iluminación general</td><td class="resp">Expert</td><td class="date">15/06/2026</td><td class="date">19/06/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note">Escoger luces con Lizzette & Jose</td></tr>
+<tr><td class="id">T-016</td><td><span class="wbs">Todos</span></td><td class="task">Instalación receptáculos eléctricos</td><td class="resp">Expert</td><td class="date">12/06/2026</td><td class="date">14/06/2026</td><td class="num">1</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note">Verificar estatus materiales</td></tr>
+<tr><td class="id">T-017</td><td><span class="wbs">Todos</span></td><td class="task">Terminación escalera general</td><td class="resp">Eury</td><td class="date">22/05/2026</td><td class="date">06/06/2026</td><td class="num">11</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill late">Atrasada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-019</td><td><span class="wbs">Piso #1</span></td><td class="task">Instalación Generador Eléctrico</td><td class="resp">Expert</td><td class="date">15/06/2026</td><td class="date">17/06/2026</td><td class="num">3</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk">Requerido para prueba de aires</td><td class="note"></td></tr>
+<tr><td class="id">T-020</td><td><span class="wbs">Piso #1</span></td><td class="task">Instalación Tanque Séptico</td><td class="resp">Expert</td><td class="date">22/05/2026</td><td class="date">28/05/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:1%"></i></div><span>1%</span></div></td><td><span class="pill done">Finalizada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-021</td><td><span class="wbs">Piso #1</span></td><td class="task">Instalación Cisternas agua potable</td><td class="resp">Expert</td><td class="date">10/07/2026</td><td class="date">17/07/2026</td><td class="num">6</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-023</td><td><span class="wbs">Piso #1</span></td><td class="task">Conexiones Trailer oficina</td><td class="resp">Expert</td><td class="date">10/07/2026</td><td class="date">17/07/2026</td><td class="num">6</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-026</td><td><span class="wbs">Piso #2</span></td><td class="task">Terminaciones de la Piscina</td><td class="resp">Eury</td><td class="date">08/06/2026</td><td class="date">10/06/2026</td><td class="num">3</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk">Validar dias con Eury</td><td class="note">Verificar materiales requeridos</td></tr>
+<tr><td class="id">T-027</td><td><span class="wbs">Piso #2</span></td><td class="task">Pruebas funcionamiento Piscina</td><td class="resp">Aqua</td><td class="date">20/07/2026</td><td class="date">22/07/2026</td><td class="num">3</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-028</td><td><span class="wbs">Piso #2</span></td><td class="task">Llenado de agua de la piscina</td><td class="resp">Chago</td><td class="date">22/07/2026</td><td class="date">23/07/2026</td><td class="num">2</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-032</td><td><span class="wbs">Piso #2</span></td><td class="task">Compra muebles cocina & Equipos</td><td class="resp">Lizzette</td><td class="date">29/05/2026</td><td class="date">29/05/2026</td><td class="num">1</td><td><div class="prog"><div class="bar"><i style="width:1%"></i></div><span>1%</span></div></td><td><span class="pill done">Finalizada</span></td><td class="risk"></td><td class="note">Validar fecha entrega</td></tr>
+<tr><td class="id">T-033</td><td><span class="wbs">Piso #2</span></td><td class="task">Terminación Cocina</td><td class="resp">Noel</td><td class="date">15/07/2026</td><td class="date">29/07/2026</td><td class="num">11</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note">Informar a Noel de fianlizacion</td></tr>
+<tr><td class="id">T-034</td><td><span class="wbs">Piso #2</span></td><td class="task">Compra equipos de Baño</td><td class="resp">Lizzette</td><td class="date">25/05/2026</td><td class="date">29/05/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:90%"></i></div><span>90%</span></div></td><td><span class="pill late">Atrasada</span></td><td class="risk"></td><td class="note">Falta inodoros</td></tr>
+<tr><td class="id">T-036</td><td><span class="wbs">Piso #2</span></td><td class="task">Muebles Oficina Jose</td><td class="resp">Noel</td><td class="date">25/06/2026</td><td class="date">29/06/2026</td><td class="num">3</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-039</td><td><span class="wbs">Todos</span></td><td class="task">Pruebas de presión agua potable</td><td class="resp">Ivan</td><td class="date">22/06/2026</td><td class="date">26/06/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-041</td><td><span class="wbs">Piso #2</span></td><td class="task">Terminación Barandas Piscina</td><td class="resp">Elias</td><td class="date">06/07/2026</td><td class="date">17/07/2026</td><td class="num">10</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-044</td><td><span class="wbs">Todos</span></td><td class="task">Instalación Puertas y Ventanas interiores</td><td class="resp">Elias</td><td class="date">27/07/2026</td><td class="date">31/07/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-048</td><td><span class="wbs">Piso #3</span></td><td class="task">Entrega muebles banos</td><td class="resp">Noel</td><td class="date">25/07/2026</td><td class="date">29/07/2026</td><td class="num">3</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-051</td><td><span class="wbs">Piso #3</span></td><td class="task">Instalación Barandas Terraza</td><td class="resp">Elias</td><td class="date">25/06/2026</td><td class="date">29/06/2026</td><td class="num">3</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-056</td><td><span class="wbs">Todos</span></td><td class="task">Terminaciones de los pisos General</td><td class="resp">Eury</td><td class="date">01/06/2026</td><td class="date">17/06/2026</td><td class="num">13</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-057</td><td><span class="wbs">Piso #4</span></td><td class="task">Instalación Techo Metálico</td><td class="resp">Eury</td><td class="date">05/06/2026</td><td class="date">08/06/2026</td><td class="num">2</td><td><div class="prog"><div class="bar"><i style="width:50%"></i></div><span>50%</span></div></td><td><span class="pill prog">En desarrollo</span></td><td class="risk">Estructural P4</td><td class="note"></td></tr>
+<tr><td class="id">T-058</td><td><span class="wbs">Piso #4</span></td><td class="task">Instalación Bloques Habitación-Baño</td><td class="resp">Eury</td><td class="date">26/05/2026</td><td class="date">04/06/2026</td><td class="num">8</td><td><div class="prog"><div class="bar"><i style="width:1%"></i></div><span>1%</span></div></td><td><span class="pill done">Finalizada</span></td><td class="risk">Construcción nueva</td><td class="note"></td></tr>
+<tr><td class="id">T-059</td><td><span class="wbs">Piso #4</span></td><td class="task">Empañetados Paredes</td><td class="resp">Eury</td><td class="date">12/06/2026</td><td class="date">15/06/2026</td><td class="num">2</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-061</td><td><span class="wbs">Piso #4</span></td><td class="task">Terminación del techo facia</td><td class="resp">Eury</td><td class="date">12/07/2026</td><td class="date">20/07/2026</td><td class="num">6</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk">Fecha inconsistente vs 9.1</td><td class="note">Verificar</td></tr>
+<tr><td class="id">T-064</td><td><span class="wbs">Piso #4</span></td><td class="task">Vanitys & Muebles Banos</td><td class="resp">Noel</td><td class="date">25/06/2026</td><td class="date">10/07/2026</td><td class="num">12</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-065</td><td><span class="wbs">Todos</span></td><td class="task">Terminaciones Baños</td><td class="resp">Eury</td><td class="date">01/06/2026</td><td class="date">10/06/2026</td><td class="num">8</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill late">Atrasada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-071</td><td><span class="wbs">Todos</span></td><td class="task">Instalación del Equipo de A/C</td><td class="resp">Danny</td><td class="date">26/05/2026</td><td class="date">12/06/2026</td><td class="num">14</td><td><div class="prog"><div class="bar"><i style="width:50%"></i></div><span>50%</span></div></td><td><span class="pill prog">En desarrollo</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-072</td><td><span class="wbs">Todos</span></td><td class="task">Verificación Sistema A/C casa</td><td class="resp">Danny</td><td class="date">12/06/2026</td><td class="date">20/06/2026</td><td class="num">6</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-073</td><td><span class="wbs">Equipos Especiales</span></td><td class="task">Instalación Elevador</td><td class="resp">Ismael</td><td class="date">06/07/2026</td><td class="date">17/07/2026</td><td class="num">10</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk">Equipo especializado</td><td class="note">Confirmar fecha & requerimientos</td></tr>
+<tr><td class="id">T-074</td><td><span class="wbs">Todos</span></td><td class="task">Instalación Muebles de T.V.</td><td class="resp">Expert</td><td class="date">06/07/2026</td><td class="date">17/07/2026</td><td class="num">10</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-075</td><td><span class="wbs">Todos</span></td><td class="task">Terminación Fachadas de la casa</td><td class="resp">Eury</td><td class="date">10/06/2026</td><td class="date">24/06/2026</td><td class="num">11</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-076</td><td><span class="wbs">Equipos Especiales</span></td><td class="task">Instalación sistema de Internet</td><td class="resp">Elias</td><td class="date">01/08/2026</td><td class="date">10/08/2026</td><td class="num">6</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-077</td><td><span class="wbs">Equipos Especiales</span></td><td class="task">Instalación de los paneles solares</td><td class="resp">Elias</td><td class="date">20/08/2026</td><td class="date">26/08/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk">Techo debe estar listo</td><td class="note">Validar con Jose (sistema)</td></tr>
+<tr><td class="id">T-078</td><td><span class="wbs">Equipos Especiales</span></td><td class="task">Instalación del sistema de Baterías</td><td class="resp">Elias</td><td class="date">20/08/2026</td><td class="date">26/08/2026</td><td class="num">5</td><td><div class="prog"><div class="bar"><i style="width:0%"></i></div><span>0%</span></div></td><td><span class="pill plan">Planificada</span></td><td class="risk"></td><td class="note"></td></tr>
+<tr><td class="id">T-079</td><td><span class="wbs">Punch List</span></td><td class="task">Punch List General</td><td class="resp">Subc.</td><td class="date">26/05/2026</td><td class="date">17/10/2026</td><td class="num">104</td><td><div class="prog"><div class="bar"><i style="width:10%"></i></div><span>10%</span></div></td><td><span class="pill prog">En desarrollo</span></td><td class="risk">Cierre del proyecto</td><td class="note">Hito final</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</body>
+</html>
+l-scale=1">
+<title>Calle Bonito #5 — Plan Maestro Semana 23</title>
+<style>
   body { background:#0f1117; color:#e2e8f0; font-family:'Segoe UI',sans-serif; font-size:13px; margin:0; padding:16px }
   h1 { color:#06b6d4; font-size:18px; margin-bottom:4px }
   p.sub { color:#64748b; font-size:12px; margin-bottom:16px }
